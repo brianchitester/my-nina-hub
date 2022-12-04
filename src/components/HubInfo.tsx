@@ -16,7 +16,7 @@ function HubInfo() {
       <div>
         <h1>{hub.data.displayName}</h1>
         <h2>{hub.data.description}</h2>
-        <a href={hub.data.externalUrl} target="_blank">
+        <a href={hub.data.externalUrl} target="_blank" rel="noreferrer">
           view on nina
         </a>
       </div>
