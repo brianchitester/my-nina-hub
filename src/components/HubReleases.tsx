@@ -2,9 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 import { useNina } from "../context/nina";
+import { usePlayer } from "../context/player";
 
 function HubReleases() {
   const { releases } = useNina();
+  const { setCurrentTrack } = usePlayer();
   if (!releases) {
     return null;
   }
@@ -16,7 +18,11 @@ function HubReleases() {
   return (
     <HubReleasesContainer>
       {releases.map((release) => (
-        <HubReleaseContainer>
+        <HubReleaseContainer
+          onClick={() => {
+            setCurrentTrack(release);
+          }}
+        >
           <ReleaseImage src={release.metadata.image} />
           <h2>{release.metadata.name}</h2>
           <p>{release.metadata.description}</p>

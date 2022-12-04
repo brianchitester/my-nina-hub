@@ -1,6 +1,7 @@
 import * as React from "react";
 import Nina from "@nina-protocol/js-sdk";
 import { useEffect, useState } from "react";
+import { Hub, Release } from "../types/ninaTypes";
 
 Nina.client.init();
 
@@ -13,52 +14,6 @@ type NinaContextValue = {
 
 type NinaProviderProps = {
   children?: React.ReactNode;
-};
-
-type Hub = {
-  publicKey: string;
-  handle: string;
-  data: {
-    displayName: string;
-    description: string;
-    externalUrl: string;
-    image: string;
-  };
-  datetime: string;
-  dataUri: string;
-  authority: string;
-};
-
-type Release = {
-  publicKey: string;
-  mint: string;
-  metadata: {
-    name: string;
-    symbol: string;
-    description: string;
-    image: string;
-    animation_url: string;
-    external_url: string;
-    attributes: any[];
-    collection: {
-      name: string;
-      family: string;
-    };
-    properties: {
-      artist: string;
-      title: string;
-      date: Date;
-      md5Digest: string;
-      files: any[];
-      category: string;
-    };
-    descriptionHtml: string;
-  };
-  datetime: Date;
-  hubReleasePublicKey: string;
-  visible: boolean;
-  publishedThroughHub: string;
-  publisher: string;
 };
 
 function NinaProvider({ children }: NinaProviderProps) {
