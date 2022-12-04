@@ -1,11 +1,14 @@
 import React from "react";
+import HubInfo from "./components/HubInfo";
+import HubReleases from "./components/HubReleases";
 import { NinaProvider } from "./context/nina";
 
 function App() {
   return (
-    <div className="App">
-      <NinaProvider>Blank Slate</NinaProvider>
-    </div>
+    <NinaProvider>
+      <HubInfo />
+      <HubReleases />
+    </NinaProvider>
   );
 }
 
